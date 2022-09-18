@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+	{% block content %}
+	<section>
+		<div class="col-6 col-12-medium"  style="border: solid #a64617 1px; padding:10px;">
+			<h3>Employee Information</h3>
+			<ul>
+				<li>Name: {{employee.name}}</li>
+				<li>Surname: {{employee.surname}}</li>
+				<li>Gender: {{employee.gender}}</li>
+				<li>Birth date: {{employee.date_of_birth}}</li>
+				<li>Place of birth: {{employee.place_of_birth}}</li>
+				<li>Citizenship: {{employee.citizenship}}</li>
+				<li>Image: {{employee.image}}</li>
+				<li>Company: {{employee.company}}</li>
+				<li>Education: {{employee.education}}</li>
+				<li>PESEL number: {{employee.pesel}}</li>
+				<li>Passport ID{{employee.passport_id}}</li>
+				<li>Residence card ID{{employee.karta_pobytu}}</li>
+				<li>Email: {{employee.email}}</li>
+				<li>Mother's name: {{employee.mother_name}}</li>
+				<li>Father's name: {{employee.father_name}}</li>
+				<li>Last entry date to Poland: {{employee.last_entry_to_poland}}</li>
+				<li>Address: {{employee.address}}</li>
+
+				<div class="col-12">
+					<ul class="actions">
+						<li><a href="{% url 'update-employee' employee.id %}"><input type="submit" value="Update" class="primary" /></a></li>
+						<li><a href="{% url 'delete-employee' employee.id %}"><input type="submit" value="Delete" class="primary" /></a></li>
+					</ul>
+				</div>
+			</ul>
+		</div>
+	</section>
+	{% endblock %}

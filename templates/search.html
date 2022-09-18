@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<section>
+		<div class="col-6 col-12-medium">
+			<h3>List of employees</h3>
+			<div class="table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>PESEL</th>
+							<th>Email</th>
+							<th>Gender</th>
+						</tr>
+					</thead>
+					{% for employee in results %}
+					<tbody>
+						<tr>
+							<td>{{ employee.name }} {{ employee.surname }}</td>
+							<td>{{ employee.pesel}}</td>
+							<td>{{ employee.email }}</td>
+							<td>{{ employee.gender }}</td>
+						</tr>
+					</tbody>
+					<a href="{% url 'detail' employee.id %}">
+					{{ employee.name }} {{ employee.surname }}
+						</a>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</section>
+{% endblock %}

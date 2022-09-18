@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<section>
+		<ul class="actions">
+			<li style="margin: 0 auto;"><a href="{% url 'emp-list' company.slug %}" class="button large">List of employees</a></li>
+		</ul>
+
+		<h1 style="color: #0c4c51; margin:10; padding:0;">{{ company.title }}</h1>
+
+		<div class="table-wrapper">
+			<table class="alt">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Address</td>
+						<td>{{company.address}}</td>
+					</tr>
+					<tr>
+						<td>Contact Person</td>
+						<td>{{company.contactPerson}}</td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td>{{company.email}}</td>
+					</tr>
+					<tr>
+						<td>Job description</td>
+						<td>{{company.description}}</td>
+					</tr>
+					<tr>
+						<td>Number of workers</td>
+						<td>{{company.numberOfWorkers}}</td>
+					</tr>
+					<tr>
+						<td>Hire type</td>
+						<td>{{company.hireType}}</td>
+					</tr>
+					<tr>
+						<td>NIP</td>
+						<td>{{company.NIP}}</td>
+					</tr>
+					<tr>
+						<td>Regon</td>
+						<td>{{company.Regon}}</td>
+					</tr>
+					<tr>
+						<td>KRS</td>
+						<td>{{company.KRS}}</td>
+					</tr>
+					<tr>
+						<td>Pay amount</td>
+						<td>{{company.payAmount}}</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2"></td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<ul class="actions">
+			<li style="margin: 0 auto; text-decoration: none;"><a href="{% url 'update-company' company.slug %}"><input type="submit" value="Update the company details" class="button large" /></a></li>
+		</ul>
+	</section>
+{% endblock %}

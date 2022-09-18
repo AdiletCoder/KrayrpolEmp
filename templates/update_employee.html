@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<section>
+		<h2 style="color: #0c4c51; text-align: center;">Form</h2>
+		<form  method="post" action="#" enctype="multipart/form-data" style="width: 100%;">
+			<div class="row gtr-uniform" style="width: 100%;">
+				<div class="col-6 col-12-xsmall" style="width: 100%;">
+					{{ employee_form.as_p }}
+					{% csrf_token %}
+				</div>
+				<div class="col-12">
+					<ul class="actions">
+						<li><input type="submit" value="Update" class="primary" /></li>
+					</ul>
+				</div>
+			</div>
+		</form>
+	</section>
+{% endblock %}

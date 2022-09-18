@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+	{% block content %}
+		<section class="tiles">
+			{% for company in companies %}
+			<article class="style3">
+				<span class="image">
+					<img src="{% static 'images/pic03.jpg' %}" alt="" />
+				</span>
+				<a href="{% url 'company-detail' company.slug %}">
+					<h2>{{company.title}}</h2>
+					<div class="content">
+						<p>{{company.description}}</p>
+					</div>
+				</a>
+			</article>
+			{% endfor %}
+			</article>
+		</section>
+	{% endblock %}

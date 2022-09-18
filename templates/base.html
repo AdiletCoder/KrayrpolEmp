@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<title>KrayrPol Agencja Praca</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper"  >
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="{% url 'home' %}" class="logo">
+									<span class="symbol"><img src="{% static 'images/logokrayr.png'%}" alt="" /></span><span class="title" style="color:#0c4c51;">KrayrPol</span>
+								</a>
+											<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu" style="background-image: url({% static 'images/varlogokrayr-07.png' %});  background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%; background: rgba(12, 76, 81, 1)">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="{% url 'home' %}">Home</a></li>
+							<li><a href="{% url 'create-employee' %}">Add employee</a></li>
+							<li><a href="{% url 'create-company' %}">Add company</a></li>
+						</ul>
+					</nav>
+
+
+				<!-- Main -->
+					<div id="main" >
+						<div class="inner"  >
+							<header>
+								<a href="{% url 'home' %}" class="logo"><h1> KRAYRPOL DATABASE APPLICATION <br /></h1>
+									<p style="text-align: center; color: #0c4c51;"><b>Krayrpol Holding. The data for our workers. Here you can find all required data concerning our clients and workers.</b></p></a>
+								<form method="get" action="{% url 'search' %}" style="text-align: center; auto; width: auto;">
+								  <input name="q" class="col-6 col-12-small" type="search" placeholder="Search" aria-label="Search" style="width: 60%;">
+								  <button class="button small" type="submit">Search</button>
+								</form>
+							</header>
+							{% block content %}
+							{% endblock %}
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner" >
+								<img src="{% static 'images/varlogokrayr-06.png' %}" style="display: block; margin-left: auto; margin-right: auto; width: 20%;">
+						</div>
+					</footer>
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

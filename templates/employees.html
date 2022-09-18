@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<section>
+		<div>
+			<h3 style="color:  #0c4c51; text-align: center;">List of employees of {{company.title}}</h3>
+			<div >
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>PESEL</th>
+							<th>Email</th>
+							<th>Gender</th>
+						</tr>
+					</thead>
+					{% for employee in employees %}
+					<tbody>
+							<td><a href="{% url 'detail' employee.id %}" style="text-decoration: none;">{{ employee.name }} {{ employee.surname }}</a></td>
+							<td><a href="{% url 'detail' employee.id %}" >{{ employee.pesel}}</a></td>
+							<td><a href="{% url 'detail' employee.id %}">{{ employee.email }}</a></td>
+							<td><a href="{% url 'detail' employee.id %}">{{ employee.gender }}</a></td>
+						</tr>
+					</tbody>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</section>
+{% endblock %}

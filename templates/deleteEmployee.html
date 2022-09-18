@@ -1,0 +1,22 @@
+{%extends 'base.html' %}
+{%load static %}
+	{% block content %}
+	<section>
+		<form  method="post" action="#" enctype="multipart/form-data">
+			<div class="row gtr-uniform">
+				<div class="col-6 col-12-xsmall" style="margin: 0 auto;" >
+						<h1>You are about to delete {{ employee.name}} {{employee.surname}}, are you sure?</h1>
+						{% csrf_token %}
+						<button type="submit" class="btn btn-danger">Delete</button>
+						<a href="{% url 'detail' employee.id %}" role="button"><input type="submit" value="Cancel" class="primary" /></a>
+
+				</div>
+				<div class="col-12">
+					<ul class="actions">
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</form>
+	</section>
+	{% endblock %}
